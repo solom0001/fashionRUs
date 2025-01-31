@@ -2,8 +2,10 @@ let productId = 1163;
 let productContainer = document.querySelector(".productContainer");
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
-  .then((data) => {
-    productContainer.innerHTML = `
+  .then((data) => showProduct(data));
+
+function showProduct(data) {
+  productContainer.innerHTML = `
      <div class="product_grid">
     <div class="product-image">
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="pic2">
@@ -14,7 +16,7 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
                 <p>${data.productdisplayname}</p>
                 <h4>Color:</h4>
                 <p>${data.basecolour}</p>
-                
+
                 <h4>Other name:</h4>
                 <p>${data.variantname}</p>
                 <h2>${data.brandname}</h2>
@@ -39,4 +41,4 @@ fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
             </div>
             </div>
     `;
-  });
+}
