@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        const myArray = ["Peter", "Troels", "Julius"] /*Man laver et array med navne*/
+
+        const nytArray = myArray.map(navn => `<li>${navn}</li>`); /*Man laver et nyt array(nytArray) og den bliver så lig med lige med  */
+
+        console.log(nytArray);
+
+        const string = nytArray.join("");
+
+        console.log(string);
+
+        document.querySelector("ul").innerHTML = string;
+    </script>
+</body>
+
+</html>
