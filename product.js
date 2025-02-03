@@ -1,10 +1,13 @@
-let productId = 1163;
+const queryString = window.location.search;
+const searchParams = new URLSearchParams(queryString);
+const productId = searchParams.get("id");
 let productContainer = document.querySelector(".productContainer");
 fetch(`https://kea-alt-del.dk/t7/api/products/${productId}`)
   .then((response) => response.json())
   .then((data) => showProduct(data));
 
 function showProduct(data) {
+  console.log("this is the id: ", productId);
   productContainer.innerHTML = `
      <div class="product_grid">
     <div class="product-image">
