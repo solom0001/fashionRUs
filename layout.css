@@ -14,7 +14,7 @@
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     gap: 25px;
   }
 }
@@ -29,7 +29,7 @@
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto auto;
+    grid-template-rows: auto auto auto;
     gap: 25px;
   }
 }
@@ -38,5 +38,5 @@
   display: grid;
   grid-template-rows: subgrid;
   gap: 4px;
-  grid-row: span 5;
+  grid-row: span 6;
 }

@@ -186,6 +186,23 @@ footer p {
   background-color: var(--fourth-color);
 }
 
+.discount1 {
+  display: none;
+  width: fit-content;
+  height: fit-content;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  padding: 0.5rem;
+  overflow: hidden;
+  background-color: var(--fourth-color);
+}
+
+.discount1 p {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
 .sold {
   display: none;
   width: fit-content;
@@ -196,10 +213,6 @@ footer p {
   padding: 0.5rem;
 
   background-color: var(--tetiary-color);
-}
-
-.vis {
-  display: block;
 }
 
 .sold-img img {
@@ -215,6 +228,23 @@ footer p {
 .discount p {
   font-size: 15px;
   margin: 0.25rem auto;
+}
+
+.price {
+  font-weight: 500;
+}
+
+.nyprice {
+  display: none;
+}
+
+.decor {
+  color: var(--fourth-color);
+  text-decoration: line-through;
+}
+
+.vis {
+  display: block;
 }
 
 /********navbar***********/
@@ -348,6 +378,10 @@ nav {
 
 .sizefit_box {
   margin-top: 1.5rem;
+}
+
+.product-image {
+  position: relative;
 }
 
 .product-image img {
