@@ -12,6 +12,8 @@ function showProduct(data) {
      <div class="product_grid">
     <div class="product-image">
                 <img src="https://kea-alt-del.dk/t7/images/webp/640/${productId}.webp" alt="pic2">
+                <div class="discount1 ${data.discount && "vis"}">
+                            <p>-${data.discount}%</p></div>
             </div>
             <div class="product-info">
                 <h2>Product Information</h2>
@@ -24,6 +26,11 @@ function showProduct(data) {
                 <p>${data.variantname}</p>
                 <h2>${data.brandname}</h2>
                 <p>${data.brandbio}</p>
+                <h4>Price:</h4>
+                <p class="price ${data.discount && "decor"}">DKK ${data.price}</p>
+                        <div class="nyprice ${data.discount && "vis"}">
+                        <p>DKK ${data.discount ? Math.round(data.price * (1 - data.discount / 100)) : data.price}</p></div>      
+
             </div>
             <div class="product-summary">
                 <p>${data.description}</p>

@@ -9,7 +9,8 @@ fetch(`https://kea-alt-del.dk/t7/api/products?category=${myCategory}`)
   .then((data) => showList(data));
 
 function showList(data) {
-  nyheader.textContent = data.length > 0 ? data[0].category : "No products found";
+  //nyheader.textContent = data.length > 0 ? data[0].category : "No products found";
+
   const markup = data
     .map(
       (product) =>
@@ -21,20 +22,20 @@ function showList(data) {
                         </div>
                         <h4>${product.productdisplayname}</h4>
                         <h3>${product.category}|${product.subcategory}|${product.articletype}</h3>
-                        <p>DKK ${product.price}</p>
-
-                        
+                        <p class="price ${product.discount && "decor"}">DKK ${product.price}</p>
+                        <div class="nyprice ${product.discount && "vis"}">
+                        <p>DKK ${product.discount ? Math.round(product.price * (1 - product.discount / 100)) : product.price}</p></div>
                         <a href="product.html?id=${product.id}">Læse mere</a>
 
                 
                   <div class="discount ${product.discount && "vis"}">
-                            <p>${product.discount}%</p></div>
+                            <p>-${product.discount}%</p></div>
             
 
                     
 
                      <div class="sold ${product.soldout ? "vis" : ""}">
-                            <p>soldOut!</p></div>
+                            <p>SoldOut!</p></div>
             
 
                     </div>
@@ -42,6 +43,6 @@ function showList(data) {
                      `
     )
     .join(" ");
-  console.log(markup);
+
   productlistContainer.innerHTML = markup;
 }
