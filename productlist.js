@@ -13,7 +13,8 @@ function showList(data) {
   const markup = data
     .map(
       (product) =>
-        `<div class="card">
+        `
+      <div class="card ${product.soldout ? "sold-img" : ""}">
 
                         <div class="img_case">
                             <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="placeholder">
@@ -22,12 +23,23 @@ function showList(data) {
                         <h3>${product.category}|${product.subcategory}|${product.articletype}</h3>
                         <p>DKK ${product.price}</p>
 
+                        
                         <a href="product.html?id=${product.id}">Læse mere</a>
-                        <div class="discount">
-                            <p>34%</p>
-                        </div>
 
-                    </div>`
+                
+                  <div class="discount ${product.discount && "vis"}">
+                            <p>${product.discount}%</p></div>
+            
+
+                    
+
+                     <div class="sold ${product.soldout ? "vis" : ""}">
+                            <p>soldOut!</p></div>
+            
+
+                    </div>
+                    
+                     `
     )
     .join(" ");
   console.log(markup);
