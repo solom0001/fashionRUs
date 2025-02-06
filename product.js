@@ -16,29 +16,22 @@ function showProduct(data) {
                             <p>-${data.discount}%</p></div>
             </div>
             <div class="product-info">
-                <h2>Product Information</h2>
-                <h4>Model name:</h4>
-                <p>${data.productdisplayname}</p>
-                <h4>Color:</h4>
+                <h2>${data.productdisplayname}</h2>
+                
+                <h4>Color</h4>
                 <p>${data.basecolour}</p>
 
                 <h4>Other name:</h4>
                 <p>${data.variantname}</p>
-                <h2>${data.brandname}</h2>
+                <h4>${data.brandname}</h4>
                 <p>${data.brandbio}</p>
-                <h4>Price:</h4>
-                <p class="price ${data.discount && "decor"}">DKK ${data.price}</p>
+                <h2>Price:</h2>
+                <p class="price ${data.discount && "decor"}">DKK ${data.price},-</p>
                         <div class="nyprice ${data.discount && "vis"}">
-                        <p>DKK ${data.discount ? Math.round(data.price * (1 - data.discount / 100)) : data.price}</p></div>      
+                        <p>DKK ${data.discount ? Math.round(data.price * (1 - data.discount / 100)) : data.price},-</p></div>      
 
-            </div>
-            <div class="product-summary">
-                <p>${data.description}</p>
 
-                <h4>Category:</h4>
-                <p>${data.category} | ${data.subcategory} | ${data.articletype}</p>
-
-                <div class="sizefit_box">
+                        <div class="sizefit_box">
                 <label for="size"><b> Choose a size:</b></label>
                 <select id="size">
                     <option value="S">S</option>
@@ -48,6 +41,14 @@ function showProduct(data) {
                 </select>
                 <button>Add to basket</button>
                 </div>
+            </div>
+            <div class="product-summary">
+                <p>${data.description}</p>
+
+                <h4>Category:</h4>
+                <p>${data.category} | ${data.subcategory} | ${data.articletype}</p>
+
+              
             </div>
             </div>
     `;

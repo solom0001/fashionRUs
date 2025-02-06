@@ -14,17 +14,16 @@
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: auto auto;
+    gap: 25px;
+  }
+
+  .grid1_1-3-1 {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
     gap: 25px;
   }
 }
-
-.grid1_1-3-1 {
-  display: grid;
-  grid-template-columns: 1fr 3fr 1fr;
-  gap: 25px;
-}
-
 @media (min-width: 1000px) {
   .container {
     display: grid;
@@ -33,10 +32,23 @@
     gap: 25px;
   }
 }
+@media (max-width: 800px) {
+  .grid1_1-3-1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .category_list_container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5px;
+  }
+}
 
 .card {
   display: grid;
   grid-template-rows: subgrid;
-  gap: 4px;
-  grid-row: span 6;
+  gap: 2px;
+  grid-row: span 5;
 }
