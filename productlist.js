@@ -19,14 +19,19 @@ function showList(data) {
 
                         <div class="img_case">
                             <img src="https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp" alt="placeholder">
-                        </div>
-                        <h4>${product.productdisplayname}</h4>
-                        <h3>${product.category}|${product.subcategory}|${product.articletype}</h3>
-                        <p class="price ${product.discount && "decor"}">DKK ${product.price}</p>
-                        <div class="nyprice ${product.discount && "vis"}">
-                        <p>DKK ${product.discount ? Math.round(product.price * (1 - product.discount / 100)) : product.price}</p></div>
-                        <a href="product.html?id=${product.id}">Læse mere</a>
 
+                            
+                        </div>
+                        
+                        <h4>${product.productdisplayname}</h4>
+                        <h3>${product.articletype}|${product.brandname}</h3>
+                        <div>
+                        <p class="price ${product.discount && "decor"}">DKK ${product.price},-</p>
+                        <div class="nyprice ${product.discount && "vis"}">
+                        <p> Now DKK ${product.discount ? Math.round(product.price * (1 - product.discount / 100)) : product.price},-</p></div>
+                        </div>
+                        <a href="product.html?id=${product.id}">Read more</a>
+ 
                 
                   <div class="discount ${product.discount && "vis"}">
                             <p>-${product.discount}%</p></div>

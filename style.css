@@ -29,6 +29,10 @@ h2 {
   font-size: 30px;
 }
 
+.product-info h2 {
+  padding-top: 25px;
+}
+
 h3 {
   font-family: sans-serif;
   margin-bottom: 0.5rem;
@@ -57,11 +61,24 @@ p {
 
 @media screen and (max-width: 800px) {
   .category_list_container {
-    height: auto;
+    text-align: center;
+    margin: 15px 25px;
   }
-
   .box {
     margin-top: 30px;
+  }
+
+  .discount p {
+    font-size: 15px;
+  }
+
+  .discount1 p {
+    color: white;
+    font-size: 15px;
+  }
+
+  .category_list_container h2 {
+    font-size: 20px;
   }
 }
 
@@ -71,6 +88,7 @@ p {
   justify-content: center;
   background-color: #ffffff;
   border: 3px solid var(--primary-color);
+  border-radius: 15px;
   width: 100%;
   height: auto;
   transition: transform 0.3s ease, background-color 0.3s ease;
@@ -121,7 +139,7 @@ footer p {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: 2vw;
+  padding: 25px;
   text-align: center;
 }
 
@@ -150,10 +168,11 @@ footer p {
   display: flex;
   align-items: center;
   justify-content: center;
+
   border-bottom: 1px solid var(--tetiary-color);
   width: 100%;
   height: 300px;
-  margin: 20px 0;
+  margin: 15px 0;
 }
 
 .card img {
@@ -181,6 +200,7 @@ footer p {
   position: absolute;
   bottom: 5px;
   right: 5px;
+  border-radius: 5px;
   padding: 0.5rem;
   overflow: hidden;
   background-color: var(--fourth-color);
@@ -193,23 +213,34 @@ footer p {
   position: absolute;
   top: 5px;
   left: 5px;
+  border-radius: 2rem;
   padding: 0.5rem;
   overflow: hidden;
   background-color: var(--fourth-color);
 }
 
+.discount p {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  margin: 0.25rem auto;
+}
+
 .discount1 p {
-  font-size: 2rem;
+  color: white;
+  font-size: 25px;
   font-weight: 600;
 }
 
 .sold {
   display: none;
+  background-color: gray;
   width: fit-content;
   height: fit-content;
   position: absolute;
   top: 25px;
   left: 5px;
+  border-radius: 5px;
   padding: 0.5rem;
 
   background-color: var(--tetiary-color);
@@ -220,13 +251,8 @@ footer p {
 }
 
 .sold p {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 0.25rem auto;
-}
-
-.discount p {
   font-size: 15px;
+
   margin: 0.25rem auto;
 }
 
@@ -359,6 +385,11 @@ nav {
   .product-summary {
     margin-top: 1.5rem;
   }
+
+  .product-summary p {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
 }
 
 /********product***********/
@@ -371,7 +402,7 @@ nav {
   margin-top: 1.5rem;
 }
 
-.product-summary label {
+.product-info label {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 20px;
 }
